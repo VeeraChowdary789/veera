@@ -1,0 +1,22 @@
+.header {
+    border-radius: 20px;
+    background-color: #8d4646;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+#nav_id {
+    padding: 10px;
+    width: 200px;
+    border-radius:20px;
+   
+}
+.content_div {
+    margin-left: 220px;
+    padding: 10px;
+}
+iframe {
+    width: 90%;
+    height: 500px;
+}
