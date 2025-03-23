@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     
+      
+      
+    </head>
+    <body>
+        <input id ="input_a" place holder= "Enter a"/>
+        <input id ="input_b" place holder= "Enter b"/>
+        <button onclick="sum_series();">calculate</button>
+        <div id="content_div"></div>
+            <script>
+
+                function sum_series()
+                {
+                    let a=parseInt(document.getElementById("input_a").value);
+                    let b=parseInt(document.getElementById("input_b").value);
+                    let sum=0;
+                    for(let i=a;i<=b;i++)
+                    {
+                       sum += i;
+                   
+                    }
+                        document.getElementById("content_div").innerHTML = "sum: " + sum;     
+                }
+            </script>
+  
+    </body>
+</html>

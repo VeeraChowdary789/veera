@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+
+    <head>
+        
+        
+        </head>
+
+    <body id="remove_data">
+        <input  placeholder="enter min number"  id ="in_min"/><br>
+        <input placeholder="enter max number" id="in_max" /><br>
+        <button onclick="random_value_gy();">Generate value</button><br>
+        <div id="div_output"></div>
+
+        <script>
+            let colors=["green","yellow","blue","orange","red"]
+            function random_value_gy() 
+            {
+                let a = parseInt(document.getElementById("in_min").value);
+                let b = parseInt(document.getElementById("in_max").value);
+
+                let random_value = Math.floor((b - a) * Math.random() + a);
+                document.getElementById("div_output").innerHTML =random_value;
+                let size = colors.length;
+                let idx = Math.floor(Math.random() * size);
+                document.getElementById("div_output").style = "color:" + colors[idx];
+             }
+               
+                function remove_welcome()
+                {
+                    document.getElementById("remove_data").innerHTML="vanished!";
+                   
+                }
+                    setInterval(remove_welcome,4000);
+
+        </script>
+    </body>
+
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #star_div
+        {
+            background-color: rgb(21, 21, 1);
+        }
+    </style>
+</head>
+
+
+    <body>
+        <input id="user_value" placeholder="Enter the star size" onkeyup="generate_stars();"/>
+        <div id="star_div"></div>
+        <script>
+            let colors = ["beige", "orange", "violet", "red"];
+            let colors_index = 0;
+            let star_size = colors.length;
+
+            function generate_stars(){
+                let stars = parseInt(document.getElementById("user_value").value);
+                let text = "";
+                let i = 0; 
+
+                while(i <= stars){
+                    let k = 0;
+                    while(k < i){
+                        text += "* "; 
+                        k++; 
+                    }
+                    text += "<br>"; 
+                    i++; 
+                }
+
+                document.getElementById("star_div").innerHTML = text;
+                document.getElementById("star_div").style = "color:" + colors[colors_index];
+                colors_index = (colors_index + 1) % star_size;
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let student = [];
+
+            function Student(student_name, student_id, student_course, student_school) {
+                this.name = student_name;
+                this.id = student_id;
+                this.course = student_course;
+                this.school = student_school;
+            }
+
+            function insert() {
+                let name = document.getElementById("name").value;
+                let id = document.getElementById("id").value;
+                let course = document.getElementById("course").value;
+                let school = document.getElementById("school").value;
+
+                if (name && id && course && school) {
+                    let newStudent = new Student(name, id, course, school);
+                    student.push(newStudent);
+
+                    document.getElementById("name").value = "";
+                    document.getElementById("id").value = "";
+                    document.getElementById("course").value = "";
+                    document.getElementById("school").value = "";
+
+                    document.getElementById("demo_veera").innerHTML = "";
+                } else {
+                    document.getElementById("demo_veera").innerHTML = "You are missing some fields!";
+                }
+            }
+
+            function show_data() {
+                if (student.length > 0) {
+                    let output = "";
+                    student.forEach(stud => {
+                        output += `<p>I am ${stud.name}. My student ID is ${stud.id} and I am currently pursuing ${stud.course} at ${stud.school}.</p>`;
+                    });
+                    document.getElementById("demo_veera").innerHTML = output;
+                } else {
+                    document.getElementById("demo_veera").innerHTML = "No information is available, please enter your details.";
+                }
+            }
+            function clearInputs() {
+            document.getElementById("name").value = "";
+            document.getElementById("ID").value = "";
+            document.getElementById("course").value = "";
+            document.getElementById("school").value = "";
+            }
+            function clear() 
+            {
+                document.getElementById("demo_veera").innerHTML="";
+               
+            }
+            function show_veera() {
+                show_data();
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <div style="text-align: center; padding: 30px;">
+            <h1>Student Detail Information</h1>
+            <table style="margin: auto; border-spacing: 18px;">
+                <tr>
+                    <td><input id="name" placeholder="Name" /></td>
+                    <td><input id="id" placeholder="ID" /></td>
+                </tr>
+                <tr>
+                    <td><input id="course" placeholder="Course" /></td>
+                    <td><input id="school" placeholder="School" /></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert();" style="background-color: lightblue; padding: 9px;" title="Insert student data">Insert Information</button></td>
+                    <td><button onclick="show_data();" style="background-color: lightyellow; padding: 9px;" title="Show student data">Show Information</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="show_veera();" style="background-color: lightorange; padding: 9px;" title="Showdata">Show </button></td>
+                    <td><button onclick="clear();" style="background-color: navyblue; padding: 9px;" title="Clearinformation">Clear</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="demo_veera" style="margin-top: 25px; text-align: center;"></div>
+    </body>
+</html>
